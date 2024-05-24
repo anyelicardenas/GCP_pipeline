@@ -69,7 +69,7 @@ tables_config = {
 }
 
 
-def fetch_and_load_data_to_bigquery(**kwargs): #parametros especiales de python 
+def fetch_and_load_data_to_bigquery(**kwargs): 
     gc = gspread.service_account(sa_config_path)
     spreadsheet = gc.open_by_url(url)
 
@@ -78,7 +78,7 @@ def fetch_and_load_data_to_bigquery(**kwargs): #parametros especiales de python
     
     create_dataset.execute(kwargs)
 
-    for table_name, schema in tables_config.items(): #K #V 
+    for table_name, schema in tables_config.items(): 
         worksheet = spreadsheet.worksheet(table_name) 
         index_float_columns = []
 
