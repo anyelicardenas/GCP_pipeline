@@ -1,0 +1,13 @@
+[2024-04-03T03:22:09.906+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_data_from_google_sheet manual__2024-04-03T03:21:58.097532+00:00 [queued]>
+[2024-04-03T03:22:09.918+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_data_from_google_sheet manual__2024-04-03T03:21:58.097532+00:00 [queued]>
+[2024-04-03T03:22:09.919+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T03:22:09.940+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): fetch_data_from_google_sheet> on 2024-04-03 03:21:58.097532+00:00
+[2024-04-03T03:22:09.946+0000] {standard_task_runner.py:60} INFO - Started process 5592 to run task
+[2024-04-03T03:22:09.951+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'fetch_data_from_google_sheet', 'manual__2024-04-03T03:21:58.097532+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpotxvqu9b']
+[2024-04-03T03:22:09.952+0000] {standard_task_runner.py:88} INFO - Job 84: Subtask fetch_data_from_google_sheet
+[2024-04-03T03:22:10.010+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.fetch_data_from_google_sheet manual__2024-04-03T03:21:58.097532+00:00 [running]> on host 84784c125ee0
+[2024-04-03T03:22:10.109+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='fetch_data_from_google_sheet' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T03:21:58.097532+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-03T03:21:58.097532+00:00'
+[2024-04-03T03:22:11.217+0000] {python.py:202} INFO - Done. Returned value was: [{'idTransportista': 1, 'nombreEmpresa': 'Speedy Express'}, {'idTransportista': 2, 'nombreEmpresa': 'United Package'}, {'idTransportista': 3, 'nombreEmpresa': 'Federal Shipping'}, {'idTransportista': 4, 'nombreEmpresa': 'test cargue 1'}]
+[2024-04-03T03:22:11.285+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=google_sheet_to_bigquery, task_id=fetch_data_from_google_sheet, execution_date=20240403T032158, start_date=20240403T032209, end_date=20240403T032211
+[2024-04-03T03:22:11.419+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-03T03:22:11.472+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

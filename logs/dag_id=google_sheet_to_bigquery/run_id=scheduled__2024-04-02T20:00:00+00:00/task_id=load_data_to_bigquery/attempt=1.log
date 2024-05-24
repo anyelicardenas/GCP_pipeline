@@ -1,0 +1,18 @@
+[2024-04-02T21:02:25.970+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.load_data_to_bigquery scheduled__2024-04-02T20:00:00+00:00 [queued]>
+[2024-04-02T21:02:25.989+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.load_data_to_bigquery scheduled__2024-04-02T20:00:00+00:00 [queued]>
+[2024-04-02T21:02:25.990+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-02T21:02:26.038+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): load_data_to_bigquery> on 2024-04-02 20:00:00+00:00
+[2024-04-02T21:02:26.047+0000] {standard_task_runner.py:60} INFO - Started process 86 to run task
+[2024-04-02T21:02:26.058+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'load_data_to_bigquery', 'scheduled__2024-04-02T20:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmp78ys51y0']
+[2024-04-02T21:02:26.068+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask load_data_to_bigquery
+[2024-04-02T21:02:26.176+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.load_data_to_bigquery scheduled__2024-04-02T20:00:00+00:00 [running]> on host 84784c125ee0
+[2024-04-02T21:02:26.650+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='load_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-04-02T20:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-02T20:00:00+00:00'
+[2024-04-02T21:02:26.716+0000] {logging_mixin.py:188} INFO -    idTransportista     nombreEmpresa
+0                1    Speedy Express
+1                2    United Package
+2                3  Federal Shipping
+3                4     test cargue 1
+[2024-04-02T21:02:26.718+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-04-02T21:02:26.741+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=google_sheet_to_bigquery, task_id=load_data_to_bigquery, execution_date=20240402T200000, start_date=20240402T210225, end_date=20240402T210226
+[2024-04-02T21:02:26.839+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-02T21:02:26.868+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

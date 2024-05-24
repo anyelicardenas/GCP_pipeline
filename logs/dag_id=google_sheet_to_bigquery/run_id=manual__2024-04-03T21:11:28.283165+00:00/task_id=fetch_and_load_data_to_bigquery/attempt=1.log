@@ -1,0 +1,45 @@
+[2024-04-03T21:11:33.236+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T21:11:28.283165+00:00 [queued]>
+[2024-04-03T21:11:33.262+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T21:11:28.283165+00:00 [queued]>
+[2024-04-03T21:11:33.265+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T21:11:33.295+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): fetch_and_load_data_to_bigquery> on 2024-04-03 21:11:28.283165+00:00
+[2024-04-03T21:11:33.305+0000] {standard_task_runner.py:60} INFO - Started process 13657 to run task
+[2024-04-03T21:11:33.310+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'fetch_and_load_data_to_bigquery', 'manual__2024-04-03T21:11:28.283165+00:00', '--job-id', '140', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpfyp0x4lm']
+[2024-04-03T21:11:33.313+0000] {standard_task_runner.py:88} INFO - Job 140: Subtask fetch_and_load_data_to_bigquery
+[2024-04-03T21:11:33.424+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T21:11:28.283165+00:00 [running]> on host 84784c125ee0
+[2024-04-03T21:11:34.460+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='fetch_and_load_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T21:11:28.283165+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-03T21:11:28.283165+00:00'
+[2024-04-03T21:11:35.615+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:11:35.627+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:11:35.628+0000] {bigquery.py:470} INFO - datasetId was not specified in `dataset_reference`. Will use default value datalake_anyeli13.
+[2024-04-03T21:11:35.631+0000] {bigquery.py:470} INFO - projectId was not specified in `dataset_reference`. Will use default value papyrus-technical-test.
+[2024-04-03T21:11:35.632+0000] {bigquery.py:481} INFO - Creating dataset: datalake_anyeli13 in project: papyrus-technical-test 
+[2024-04-03T21:11:37.326+0000] {bigquery.py:485} INFO - Dataset created successfully.
+[2024-04-03T21:11:37.748+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:11:37.750+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:11:37.751+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T21:11:38.948+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli13.transportistas created successfully
+[2024-04-03T21:11:38.988+0000] {logging_mixin.py:188} INFO -    idTransportista     nombreEmpresa
+0                1    Speedy Express
+1                2    United Package
+2                3  Federal Shipping
+3                4     test cargue 1
+[2024-04-03T21:11:38.999+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:11:39.001+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:11:39.075+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': "INSERT `papyrus-technical-test.datalake_anyeli13.transportistas` VALUES (1, 'Speedy Express'), (2, 'United Package'), (3, 'Federal Shipping'), (4, 'test cargue 1');", 'useLegacySql': False, 'allowLargeResults': True, 'priority': 'BATCH'}}'
+[2024-04-03T21:11:39.076+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_insert_data_transportistas_2024_04_03T21_11_28_283165_00_00_038c105e0d6a8d635da42a22ee58e1db
+[2024-04-03T21:11:41.863+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dags/habidag.py", line 153, in fetch_and_load_data_to_bigquery
+    "query": open(f'dags/dags/sql/{table_name}_curated.sql', 'r').read().format(**locals()),
+KeyError: 'dataset_name'
+[2024-04-03T21:11:41.948+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=google_sheet_to_bigquery, task_id=fetch_and_load_data_to_bigquery, execution_date=20240403T211128, start_date=20240403T211133, end_date=20240403T211141
+[2024-04-03T21:11:41.979+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 140 for task fetch_and_load_data_to_bigquery ('dataset_name'; 13657)
+[2024-04-03T21:11:42.014+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-03T21:11:42.061+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,67 @@
+[2024-04-03T21:17:11.402+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T21:17:06.542890+00:00 [queued]>
+[2024-04-03T21:17:11.433+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T21:17:06.542890+00:00 [queued]>
+[2024-04-03T21:17:11.435+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T21:17:11.494+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): fetch_and_load_data_to_bigquery> on 2024-04-03 21:17:06.542890+00:00
+[2024-04-03T21:17:11.504+0000] {standard_task_runner.py:60} INFO - Started process 13739 to run task
+[2024-04-03T21:17:11.512+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'fetch_and_load_data_to_bigquery', 'manual__2024-04-03T21:17:06.542890+00:00', '--job-id', '141', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpus6kl4cr']
+[2024-04-03T21:17:11.515+0000] {standard_task_runner.py:88} INFO - Job 141: Subtask fetch_and_load_data_to_bigquery
+[2024-04-03T21:17:11.618+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T21:17:06.542890+00:00 [running]> on host 84784c125ee0
+[2024-04-03T21:17:11.732+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='fetch_and_load_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T21:17:06.542890+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-03T21:17:06.542890+00:00'
+[2024-04-03T21:17:12.629+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:17:12.634+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:17:12.635+0000] {bigquery.py:470} INFO - datasetId was not specified in `dataset_reference`. Will use default value datalake_anyeli14.
+[2024-04-03T21:17:12.636+0000] {bigquery.py:470} INFO - projectId was not specified in `dataset_reference`. Will use default value papyrus-technical-test.
+[2024-04-03T21:17:12.637+0000] {bigquery.py:481} INFO - Creating dataset: datalake_anyeli14 in project: papyrus-technical-test 
+[2024-04-03T21:17:13.817+0000] {bigquery.py:485} INFO - Dataset created successfully.
+[2024-04-03T21:17:14.275+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:17:14.281+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:17:14.285+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T21:17:15.189+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli14.transportistas created successfully
+[2024-04-03T21:17:15.233+0000] {logging_mixin.py:188} INFO -    idTransportista     nombreEmpresa
+0                1    Speedy Express
+1                2    United Package
+2                3  Federal Shipping
+3                4     test cargue 1
+[2024-04-03T21:17:15.249+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:17:15.252+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:17:15.331+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': "INSERT `papyrus-technical-test.datalake_anyeli14.transportistas` VALUES (1, 'Speedy Express'), (2, 'United Package'), (3, 'Federal Shipping'), (4, 'test cargue 1');", 'useLegacySql': False, 'allowLargeResults': True, 'priority': 'BATCH'}}'
+[2024-04-03T21:17:15.333+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_insert_data_transportistas_2024_04_03T21_17_06_542890_00_00_81e386be271b87a7f731dfd213ff5536
+[2024-04-03T21:17:17.967+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T21:17:17.969+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T21:17:18.014+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': 'CREATE TABLE IF NOT EXISTS\ndatalake_anyeli14.transportistas_curated\nAS (\n    SELECT idTransportista, nombreEmpresa \n    FROM `papyrus-technical-test.datalake_anyeli14.transportistas`\n    ORDER BY idTransportista\n)', 'useLegacySql': False, 'writeDisposition': 'WRITE_TRUNCATE', 'destinationTable': {'projectId': 'papyrus-technical-test', 'datasetId': 'datalake_anyeli14', 'tableId': 'transportistas_curated'}}}'
+[2024-04-03T21:17:18.015+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_create_curated_table_transportistas_2024_04_03T21_17_06_542890_00_00_356951b08c3ea162019f41fb8b0d85ff
+[2024-04-03T21:17:18.640+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dags/habidag.py", line 165, in fetch_and_load_data_to_bigquery
+    create_curated_table.execute(kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2870, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1595, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1584, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 971, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Cannot set destination table in jobs with DDL statements; reason: invalidQuery, message: Cannot set destination table in jobs with DDL statements
+
+Location: US
+Job ID: airflow_adhoc_airflow_create_curated_table_transportistas_2024_04_03T21_17_06_542890_00_00_356951b08c3ea162019f41fb8b0d85ff
+
+[2024-04-03T21:17:18.656+0000] {taskinstance.py:1149} INFO - Marking task as UP_FOR_RETRY. dag_id=google_sheet_to_bigquery, task_id=fetch_and_load_data_to_bigquery, execution_date=20240403T211706, start_date=20240403T211711, end_date=20240403T211718
+[2024-04-03T21:17:18.673+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 141 for task fetch_and_load_data_to_bigquery (400 Cannot set destination table in jobs with DDL statements; reason: invalidQuery, message: Cannot set destination table in jobs with DDL statements
+
+Location: US
+Job ID: airflow_adhoc_airflow_create_curated_table_transportistas_2024_04_03T21_17_06_542890_00_00_356951b08c3ea162019f41fb8b0d85ff
+; 13739)
+[2024-04-03T21:17:18.707+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-03T21:17:18.766+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

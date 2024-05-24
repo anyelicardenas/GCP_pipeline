@@ -1,0 +1,152 @@
+[2024-04-03T15:06:49.106+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery scheduled__2024-04-03T14:00:00+00:00 [queued]>
+[2024-04-03T15:06:49.134+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery scheduled__2024-04-03T14:00:00+00:00 [queued]>
+[2024-04-03T15:06:49.136+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T15:06:49.177+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): fetch_and_load_data_to_bigquery> on 2024-04-03 14:00:00+00:00
+[2024-04-03T15:06:49.192+0000] {standard_task_runner.py:60} INFO - Started process 8581 to run task
+[2024-04-03T15:06:49.203+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'fetch_and_load_data_to_bigquery', 'scheduled__2024-04-03T14:00:00+00:00', '--job-id', '135', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpuxcjioto']
+[2024-04-03T15:06:49.207+0000] {standard_task_runner.py:88} INFO - Job 135: Subtask fetch_and_load_data_to_bigquery
+[2024-04-03T15:06:49.328+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery scheduled__2024-04-03T14:00:00+00:00 [running]> on host 84784c125ee0
+[2024-04-03T15:06:49.511+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='fetch_and_load_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-03T14:00:00+00:00'
+[2024-04-03T15:06:50.388+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:06:50.404+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:06:50.406+0000] {bigquery.py:470} INFO - datasetId was not specified in `dataset_reference`. Will use default value datalake_anyeli10.
+[2024-04-03T15:06:50.409+0000] {bigquery.py:470} INFO - projectId was not specified in `dataset_reference`. Will use default value papyrus-technical-test.
+[2024-04-03T15:06:50.411+0000] {bigquery.py:481} INFO - Creating dataset: datalake_anyeli10 in project: papyrus-technical-test 
+[2024-04-03T15:06:52.081+0000] {bigquery.py:485} INFO - Dataset created successfully.
+[2024-04-03T15:06:52.441+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:06:52.444+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:06:52.446+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T15:06:53.563+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli10.transportistas created successfully
+[2024-04-03T15:06:53.606+0000] {logging_mixin.py:188} INFO -    idTransportista     nombreEmpresa
+0                1    Speedy Express
+1                2    United Package
+2                3  Federal Shipping
+3                4     test cargue 1
+[2024-04-03T15:06:53.953+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:06:53.959+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:06:53.961+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T15:06:55.205+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli10.categorias created successfully
+[2024-04-03T15:06:55.243+0000] {logging_mixin.py:188} INFO -    idCategoria  ...                                        descripcion
+0            1  ...        Soft drinks, coffees, teas, beers, and ales
+1            2  ...  Sweet and savory sauces, relishes, spreads, an...
+2            3  ...                Desserts, candies, and sweet breads
+3            4  ...                                            Cheeses
+4            5  ...                Breads, crackers, pasta, and cereal
+5            6  ...                                     Prepared meats
+6            7  ...                          Dried fruit and bean curd
+7            8  ...                                   Seaweed and fish
+
+[8 rows x 3 columns]
+[2024-04-03T15:06:55.617+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:06:55.619+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:06:55.620+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T15:06:56.799+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli10.pedidos created successfully
+[2024-04-03T15:06:56.858+0000] {logging_mixin.py:188} INFO -      idPedido idCliente  idEmpleado  ...  fechaEnvio idTransportista   flete
+0       10258     ERNSH           1  ...  2013-07-23               1  140.51
+1       10270     WARTH           1  ...  2013-08-02               1  136.54
+2       10275     MAGAA           1  ...  2013-08-09               1   26.93
+3       10351     ERNSH           1  ...  2013-11-20               1  162.33
+4       10364     EASTC           1  ...  2013-12-04               1   71.97
+..        ...       ...         ...  ...         ...             ...     ...
+825     10837     BERGS           9  ...  2015-01-23               3   13.32
+826     10889     RATTC           9  ...  2015-02-23               3  280.61
+827     10942     REGGC           9  ...  2015-03-18               3   17.95
+828     10963     FURIB           9  ...  2015-03-26               3    2.70
+829     11058     BLAUS           9  ...                           3   31.14
+
+[830 rows x 8 columns]
+[2024-04-03T15:06:57.150+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:06:57.152+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:06:57.153+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T15:06:58.287+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli10.empleados created successfully
+[2024-04-03T15:06:58.338+0000] {logging_mixin.py:188} INFO -    idEmpleado    nombreEmpleado                titulo    ciudad pais reportaA
+0           5   Steven Buchanan         Sales Manager    London   UK        2
+1           6    Michael Suyama  Sales Representative    London   UK        5
+2           7       Robert King  Sales Representative    London   UK        5
+3           9    Anne Dodsworth  Sales Representative    London   UK        5
+4           8    Laura Callahan         Sales Manager  New York  USA        2
+5           1     Nancy Davolio  Sales Representative  New York  USA        8
+6           3   Janet Leverling  Sales Representative  New York  USA        8
+7           4  Margaret Peacock  Sales Representative  New York  USA        8
+8           2     Andrew Fuller  Vice President Sales  New York  USA         
+[2024-04-03T15:06:58.669+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:06:58.671+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:06:58.672+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T15:06:59.765+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli10.clientes created successfully
+[2024-04-03T15:06:59.800+0000] {logging_mixin.py:188} INFO -    idCliente               nombreEmpresa  ...          ciudad       pais
+0      LETSS           Let's Stop N Shop  ...   San Francisco        USA
+1      WHITC        White Clover Markets  ...         Seattle        USA
+2      BOLID   Bólido Comidas preparadas  ...          Madrid      Spain
+3      BONAP                    Bon app'  ...       Marseille     France
+4      DUMON             Du monde entier  ...          Nantes     France
+..       ...                         ...  ...             ...        ...
+86     HILAA            HILARION-Abastos  ...   San Cristóbal  Venezuela
+87     RICAR          Ricardo Adocicados  ...  Rio de Janeiro     Brazil
+88     FOLIG           Folies gourmandes  ...           Lille     France
+89     WILMK                 Wilman Kala  ...        Helsinki    Finland
+90     RATTC  Rattlesnake Canyon Grocery  ...     Albuquerque        USA
+
+[91 rows x 6 columns]
+[2024-04-03T15:07:00.693+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:07:00.698+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:07:00.700+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T15:07:01.917+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli10.pedidos_detalles created successfully
+[2024-04-03T15:07:02.017+0000] {logging_mixin.py:188} INFO -       idPedido idProducto precioUnitario  cantidad descuento
+0        10294          1            144        18         0
+1        10317          1            144        20         0
+2        10354          1            144        12         0
+3        10406          1            144        10         0
+4        10413          1            144        24         0
+...        ...        ...            ...       ...       ...
+2150     10835        7 7             13         2         2
+2151     11077        1 4           2325         1         3
+2152     11077        1 6           1745         2         3
+2153     11077        6 4           3325         2         3
+2154     11077        6 0             34         2         6
+
+[2155 rows x 5 columns]
+[2024-04-03T15:07:02.024+0000] {logging_mixin.py:188} INFO - INSERT `papyrus-technical-test.datalake_anyeli10.pedidos_detalles` VALUES (10294, '1', '144', 18, '0');
+[2024-04-03T15:07:02.042+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:07:02.045+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:07:02.167+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': "INSERT `papyrus-technical-test.datalake_anyeli10.pedidos_detalles` VALUES (10294, '1', '144', 18, '0');", 'useLegacySql': False, 'allowLargeResults': True, 'priority': 'BATCH'}}'
+[2024-04-03T15:07:02.168+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_insert_data_pedidos_detalles_2024_04_03T14_00_00_00_00_d13519f6c7006623ffe54bebb25cf1d6
+[2024-04-03T15:07:04.888+0000] {logging_mixin.py:188} INFO - INSERT `papyrus-technical-test.datalake_anyeli10.pedidos_detalles` VALUES (10294, '1', '144', 18, '0');(10317, '1', '144', 20, '0');
+[2024-04-03T15:07:04.902+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T15:07:04.906+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T15:07:04.998+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': "INSERT `papyrus-technical-test.datalake_anyeli10.pedidos_detalles` VALUES (10294, '1', '144', 18, '0');(10317, '1', '144', 20, '0');", 'useLegacySql': False, 'allowLargeResults': True, 'priority': 'BATCH'}}'
+[2024-04-03T15:07:05.016+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_insert_data_pedidos_detalles_2024_04_03T14_00_00_00_00_468b30aa3d4632ab9126df1aadb3c535
+[2024-04-03T15:07:06.171+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dags/habidag.py", line 155, in fetch_and_load_data_to_bigquery
+    insert_query_job.execute(kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2870, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1595, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1584, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 971, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Syntax error: Unexpected integer literal "10317" at [1:105]; reason: invalidQuery, location: query, message: Syntax error: Unexpected integer literal "10317" at [1:105]
+
+Location: US
+Job ID: airflow_adhoc_airflow_insert_data_pedidos_detalles_2024_04_03T14_00_00_00_00_468b30aa3d4632ab9126df1aadb3c535
+
+[2024-04-03T15:07:06.190+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=google_sheet_to_bigquery, task_id=fetch_and_load_data_to_bigquery, execution_date=20240403T140000, start_date=20240403T150649, end_date=20240403T150706
+[2024-04-03T15:07:06.210+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 135 for task fetch_and_load_data_to_bigquery (400 Syntax error: Unexpected integer literal "10317" at [1:105]; reason: invalidQuery, location: query, message: Syntax error: Unexpected integer literal "10317" at [1:105]
+
+Location: US
+Job ID: airflow_adhoc_airflow_insert_data_pedidos_detalles_2024_04_03T14_00_00_00_00_468b30aa3d4632ab9126df1aadb3c535
+; 8581)
+[2024-04-03T15:07:06.247+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-03T15:07:06.307+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

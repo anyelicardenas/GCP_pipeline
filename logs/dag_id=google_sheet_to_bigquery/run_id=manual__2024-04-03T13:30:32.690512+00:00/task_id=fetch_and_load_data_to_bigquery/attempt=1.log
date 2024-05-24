@@ -1,0 +1,205 @@
+[2024-04-03T13:30:36.484+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T13:30:32.690512+00:00 [queued]>
+[2024-04-03T13:30:36.496+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T13:30:32.690512+00:00 [queued]>
+[2024-04-03T13:30:36.496+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T13:30:36.515+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): fetch_and_load_data_to_bigquery> on 2024-04-03 13:30:32.690512+00:00
+[2024-04-03T13:30:36.522+0000] {standard_task_runner.py:60} INFO - Started process 7192 to run task
+[2024-04-03T13:30:36.525+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'fetch_and_load_data_to_bigquery', 'manual__2024-04-03T13:30:32.690512+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpxtvvawfh']
+[2024-04-03T13:30:36.527+0000] {standard_task_runner.py:88} INFO - Job 110: Subtask fetch_and_load_data_to_bigquery
+[2024-04-03T13:30:36.596+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.fetch_and_load_data_to_bigquery manual__2024-04-03T13:30:32.690512+00:00 [running]> on host 84784c125ee0
+[2024-04-03T13:30:36.746+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='fetch_and_load_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T13:30:32.690512+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-03T13:30:32.690512+00:00'
+[2024-04-03T13:30:37.789+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T13:30:37.794+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T13:30:37.795+0000] {bigquery.py:470} INFO - datasetId was not specified in `dataset_reference`. Will use default value datalake_anyeli5.
+[2024-04-03T13:30:37.796+0000] {bigquery.py:470} INFO - projectId was not specified in `dataset_reference`. Will use default value papyrus-technical-test.
+[2024-04-03T13:30:37.797+0000] {bigquery.py:481} INFO - Creating dataset: datalake_anyeli5 in project: papyrus-technical-test 
+[2024-04-03T13:30:38.905+0000] {bigquery.py:485} INFO - Dataset created successfully.
+[2024-04-03T13:30:39.270+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T13:30:39.272+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T13:30:39.273+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T13:30:40.372+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli5.transportistas created successfully
+[2024-04-03T13:30:40.398+0000] {logging_mixin.py:188} INFO -    idTransportista     nombreEmpresa
+0                1    Speedy Express
+1                2    United Package
+2                3  Federal Shipping
+3                4     test cargue 1
+[2024-04-03T13:30:40.400+0000] {logging_mixin.py:188} INFO - someone had an error:  transportistas 1 {'name': 'nombreEmpresa', 'type': 'STRING', 'mode': 'REQUIRED'} idTransportista                 1
+nombreEmpresa      Speedy Express
+Name: 0, dtype: object Speedy Express <class 'str'>
+[2024-04-03T13:30:40.402+0000] {logging_mixin.py:188} INFO - someone had an error:  transportistas 1 {'name': 'nombreEmpresa', 'type': 'STRING', 'mode': 'REQUIRED'} idTransportista                 2
+nombreEmpresa      United Package
+Name: 1, dtype: object United Package <class 'str'>
+[2024-04-03T13:30:40.403+0000] {logging_mixin.py:188} INFO - someone had an error:  transportistas 1 {'name': 'nombreEmpresa', 'type': 'STRING', 'mode': 'REQUIRED'} idTransportista                   3
+nombreEmpresa      Federal Shipping
+Name: 2, dtype: object Federal Shipping <class 'str'>
+[2024-04-03T13:30:40.405+0000] {logging_mixin.py:188} INFO - someone had an error:  transportistas 1 {'name': 'nombreEmpresa', 'type': 'STRING', 'mode': 'REQUIRED'} idTransportista                4
+nombreEmpresa      test cargue 1
+Name: 3, dtype: object test cargue 1 <class 'str'>
+[2024-04-03T13:30:40.405+0000] {logging_mixin.py:188} INFO - INSERT `papyrus-technical-test.datalake_anyeli5.transportistas` VALUES (1, 'Speedy Express'), (2, 'United Package'), (3, 'Federal Shipping'), (4, 'test cargue 1');
+[2024-04-03T13:30:40.414+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T13:30:40.418+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T13:30:40.492+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': "INSERT `papyrus-technical-test.datalake_anyeli5.transportistas` VALUES (1, 'Speedy Express'), (2, 'United Package'), (3, 'Federal Shipping'), (4, 'test cargue 1');", 'useLegacySql': False, 'priority': 'BATCH'}}'
+[2024-04-03T13:30:40.493+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_insert_data_transportistas_2024_04_03T13_30_32_690512_00_00_36c8eac23e27330efdf09abeed5cf092
+[2024-04-03T13:30:43.461+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T13:30:43.467+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T13:30:43.478+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T13:30:44.994+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli5.categorias created successfully
+[2024-04-03T13:30:45.128+0000] {logging_mixin.py:188} INFO -    idCategoria  ...                                        descripcion
+0            1  ...        Soft drinks, coffees, teas, beers, and ales
+1            2  ...  Sweet and savory sauces, relishes, spreads, an...
+2            3  ...                Desserts, candies, and sweet breads
+3            4  ...                                            Cheeses
+4            5  ...                Breads, crackers, pasta, and cereal
+5            6  ...                                     Prepared meats
+6            7  ...                          Dried fruit and bean curd
+7            8  ...                                   Seaweed and fish
+
+[8 rows x 3 columns]
+[2024-04-03T13:30:45.135+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                                  1
+nombreCategoria                                      Beverages
+descripcion        Soft drinks, coffees, teas, beers, and ales
+Name: 0, dtype: object Beverages <class 'str'>
+[2024-04-03T13:30:45.137+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                                  1
+nombreCategoria                                      Beverages
+descripcion        Soft drinks, coffees, teas, beers, and ales
+Name: 0, dtype: object Soft drinks, coffees, teas, beers, and ales <class 'str'>
+[2024-04-03T13:30:45.153+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                                        2
+nombreCategoria                                           Condiments
+descripcion        Sweet and savory sauces, relishes, spreads, an...
+Name: 1, dtype: object Condiments <class 'str'>
+[2024-04-03T13:30:45.167+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                                        2
+nombreCategoria                                           Condiments
+descripcion        Sweet and savory sauces, relishes, spreads, an...
+Name: 1, dtype: object Sweet and savory sauces, relishes, spreads, and seasonings <class 'str'>
+[2024-04-03T13:30:45.182+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                          3
+nombreCategoria                            Confections
+descripcion        Desserts, candies, and sweet breads
+Name: 2, dtype: object Confections <class 'str'>
+[2024-04-03T13:30:45.191+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                          3
+nombreCategoria                            Confections
+descripcion        Desserts, candies, and sweet breads
+Name: 2, dtype: object Desserts, candies, and sweet breads <class 'str'>
+[2024-04-03T13:30:45.197+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                     4
+nombreCategoria    Dairy Products
+descripcion               Cheeses
+Name: 3, dtype: object Dairy Products <class 'str'>
+[2024-04-03T13:30:45.200+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                     4
+nombreCategoria    Dairy Products
+descripcion               Cheeses
+Name: 3, dtype: object Cheeses <class 'str'>
+[2024-04-03T13:30:45.215+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                          5
+nombreCategoria                       Grains & Cereals
+descripcion        Breads, crackers, pasta, and cereal
+Name: 4, dtype: object Grains & Cereals <class 'str'>
+[2024-04-03T13:30:45.230+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                          5
+nombreCategoria                       Grains & Cereals
+descripcion        Breads, crackers, pasta, and cereal
+Name: 4, dtype: object Breads, crackers, pasta, and cereal <class 'str'>
+[2024-04-03T13:30:45.240+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                     6
+nombreCategoria    Meat & Poultry
+descripcion        Prepared meats
+Name: 5, dtype: object Meat & Poultry <class 'str'>
+[2024-04-03T13:30:45.255+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                     6
+nombreCategoria    Meat & Poultry
+descripcion        Prepared meats
+Name: 5, dtype: object Prepared meats <class 'str'>
+[2024-04-03T13:30:45.278+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                7
+nombreCategoria                      Produce
+descripcion        Dried fruit and bean curd
+Name: 6, dtype: object Produce <class 'str'>
+[2024-04-03T13:30:45.291+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                                7
+nombreCategoria                      Produce
+descripcion        Dried fruit and bean curd
+Name: 6, dtype: object Dried fruit and bean curd <class 'str'>
+[2024-04-03T13:30:45.300+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 1 {'name': 'nombreCategoria', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                       8
+nombreCategoria             Seafood
+descripcion        Seaweed and fish
+Name: 7, dtype: object Seafood <class 'str'>
+[2024-04-03T13:30:45.314+0000] {logging_mixin.py:188} INFO - someone had an error:  categorias 2 {'name': 'descripcion', 'type': 'STRING', 'mode': 'REQUIRED'} idCategoria                       8
+nombreCategoria             Seafood
+descripcion        Seaweed and fish
+Name: 7, dtype: object Seaweed and fish <class 'str'>
+[2024-04-03T13:30:45.316+0000] {logging_mixin.py:188} INFO - INSERT `papyrus-technical-test.datalake_anyeli5.categorias` VALUES (1, 'Beverages', 'Soft drinks, coffees, teas, beers, and ales'), (2, 'Condiments', 'Sweet and savory sauces, relishes, spreads, and seasonings'), (3, 'Confections', 'Desserts, candies, and sweet breads'), (4, 'Dairy Products', 'Cheeses'), (5, 'Grains & Cereals', 'Breads, crackers, pasta, and cereal'), (6, 'Meat & Poultry', 'Prepared meats'), (7, 'Produce', 'Dried fruit and bean curd'), (8, 'Seafood', 'Seaweed and fish');
+[2024-04-03T13:30:45.342+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T13:30:45.366+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T13:30:45.592+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': "INSERT `papyrus-technical-test.datalake_anyeli5.categorias` VALUES (1, 'Beverages', 'Soft drinks, coffees, teas, beers, and ales'), (2, 'Condiments', 'Sweet and savory sauces, relishes, spreads, and seasonings'), (3, 'Confections', 'Desserts, candies, and sweet breads'), (4, 'Dairy Products', 'Cheeses'), (5, 'Grains & Cereals', 'Breads, crackers, pasta, and cereal'), (6, 'Meat & Poultry', 'Prepared meats'), (7, 'Produce', 'Dried fruit and bean curd'), (8, 'Seafood', 'Seaweed and fish');", 'useLegacySql': False, 'priority': 'BATCH'}}'
+[2024-04-03T13:30:45.600+0000] {bigquery.py:1613} INFO - Inserting job ***_adhoc_***_insert_data_categorias_2024_04_03T13_30_32_690512_00_00_75b86414f5c727511e8c14b4e2d4938e
+[2024-04-03T13:30:49.111+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T13:30:49.118+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T13:30:49.120+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T13:30:50.374+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli5.pedidos created successfully
+[2024-04-03T13:30:50.422+0000] {logging_mixin.py:188} INFO -      idPedido idCliente  idEmpleado  ...  fechaEnvio idTransportista  flete
+0       10258     ERNSH           1  ...  2013-07-23               1  14051
+1       10270     WARTH           1  ...  2013-08-02               1  13654
+2       10275     MAGAA           1  ...  2013-08-09               1   2693
+3       10351     ERNSH           1  ...  2013-11-20               1  16233
+4       10364     EASTC           1  ...  2013-12-04               1   7197
+..        ...       ...         ...  ...         ...             ...    ...
+825     10837     BERGS           9  ...  2015-01-23               3   1332
+826     10889     RATTC           9  ...  2015-02-23               3  28061
+827     10942     REGGC           9  ...  2015-03-18               3   1795
+828     10963     FURIB           9  ...  2015-03-26               3     27
+829     11058     BLAUS           9  ...                           3   3114
+
+[830 rows x 8 columns]
+[2024-04-03T13:30:50.426+0000] {logging_mixin.py:188} INFO - someone had an error:  pedidos 1 {'name': 'idCliente', 'type': 'STRING', 'mode': 'REQUIRED'} idPedido                10258
+idCliente               ERNSH
+idEmpleado                  1
+fechaPedido        2013-07-17
+fechaRequerida     2013-08-14
+fechaEnvio         2013-07-23
+idTransportista             1
+flete                   14051
+Name: 0, dtype: object ERNSH <class 'str'>
+[2024-04-03T13:30:50.430+0000] {logging_mixin.py:188} INFO - someone had an error:  pedidos 3 {'name': 'fechaPedido', 'type': 'STRING', 'mode': 'REQUIRED'} idPedido                10258
+idCliente               ERNSH
+idEmpleado                  1
+fechaPedido        2013-07-17
+fechaRequerida     2013-08-14
+fechaEnvio         2013-07-23
+idTransportista             1
+flete                   14051
+Name: 0, dtype: object 2013-07-17 <class 'str'>
+[2024-04-03T13:30:50.433+0000] {logging_mixin.py:188} INFO - someone had an error:  pedidos 4 {'name': 'fechaRequerida', 'type': 'STRING', 'mode': 'NULLABLE'} idPedido                10258
+idCliente               ERNSH
+idEmpleado                  1
+fechaPedido        2013-07-17
+fechaRequerida     2013-08-14
+fechaEnvio         2013-07-23
+idTransportista             1
+flete                   14051
+Name: 0, dtype: object 2013-08-14 <class 'str'>
+[2024-04-03T13:30:50.434+0000] {logging_mixin.py:188} INFO - someone had an error:  pedidos 5 {'name': 'fechaEnvio', 'type': 'STRING', 'mode': 'NULLABLE'} idPedido                10258
+idCliente               ERNSH
+idEmpleado                  1
+fechaPedido        2013-07-17
+fechaRequerida     2013-08-14
+fechaEnvio         2013-07-23
+idTransportista             1
+flete                   14051
+Name: 0, dtype: object 2013-07-23 <class 'str'>
+[2024-04-03T13:30:50.436+0000] {logging_mixin.py:188} INFO - someone had an error:  pedidos 7 {'name': 'flete', 'type': 'STRING', 'mode': 'NULLABLE'} idPedido                10258
+idCliente               ERNSH
+idEmpleado                  1
+fechaPedido        2013-07-17
+fechaRequerida     2013-08-14
+fechaEnvio         2013-07-23
+idTransportista             1
+flete                   14051
+Name: 0, dtype: object 14051 <class 'int'>
+[2024-04-03T13:30:50.438+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dags/habidag.py", line 106, in fetch_and_load_data_to_bigquery
+    column_value_scaped_special_characters = row[column['name']].replace("'", "\'")
+AttributeError: 'int' object has no attribute 'replace'
+[2024-04-03T13:30:50.459+0000] {taskinstance.py:1149} INFO - Marking task as UP_FOR_RETRY. dag_id=google_sheet_to_bigquery, task_id=fetch_and_load_data_to_bigquery, execution_date=20240403T133032, start_date=20240403T133036, end_date=20240403T133050
+[2024-04-03T13:30:50.483+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 110 for task fetch_and_load_data_to_bigquery ('int' object has no attribute 'replace'; 7192)
+[2024-04-03T13:30:50.501+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-03T13:30:50.524+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

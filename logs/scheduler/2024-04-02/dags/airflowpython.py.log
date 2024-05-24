@@ -1,0 +1,84 @@
+[2024-04-02T18:39:29.101+0000] {processor.py:161} INFO - Started process (PID=38) to work on /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:39:29.115+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dags/airflowpython.py for tasks to queue
+[2024-04-02T18:39:29.128+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:39:29.127+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:39:29.387+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:39:29.367+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dags/airflowpython.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dags/airflowpython.py", line 10, in <module>
+    from main import main
+ModuleNotFoundError: No module named 'main'
+[2024-04-02T18:39:29.389+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:39:29.595+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dags/airflowpython.py took 0.500 seconds
+[2024-04-02T18:39:59.807+0000] {processor.py:161} INFO - Started process (PID=95) to work on /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:39:59.809+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dags/airflowpython.py for tasks to queue
+[2024-04-02T18:39:59.812+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:39:59.811+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:39:59.840+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:39:59.833+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dags/airflowpython.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dags/airflowpython.py", line 10, in <module>
+    from main import main
+ModuleNotFoundError: No module named 'main'
+[2024-04-02T18:39:59.843+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:39:59.877+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dags/airflowpython.py took 0.075 seconds
+[2024-04-02T18:40:29.964+0000] {processor.py:161} INFO - Started process (PID=154) to work on /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:40:29.966+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dags/airflowpython.py for tasks to queue
+[2024-04-02T18:40:29.968+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:40:29.968+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:40:29.991+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:40:29.987+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dags/airflowpython.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dags/airflowpython.py", line 10, in <module>
+    from main import main
+ModuleNotFoundError: No module named 'main'
+[2024-04-02T18:40:29.995+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:40:30.022+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dags/airflowpython.py took 0.064 seconds
+[2024-04-02T18:41:00.224+0000] {processor.py:161} INFO - Started process (PID=213) to work on /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:41:00.226+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dags/airflowpython.py for tasks to queue
+[2024-04-02T18:41:00.229+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:41:00.229+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:41:00.253+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:41:00.249+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dags/airflowpython.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dags/airflowpython.py", line 10, in <module>
+    from main import main
+ModuleNotFoundError: No module named 'main'
+[2024-04-02T18:41:00.256+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:41:00.281+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dags/airflowpython.py took 0.062 seconds
+[2024-04-02T18:41:30.706+0000] {processor.py:161} INFO - Started process (PID=272) to work on /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:41:30.708+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dags/airflowpython.py for tasks to queue
+[2024-04-02T18:41:30.711+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:41:30.711+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:41:30.745+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:41:30.739+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dags/airflowpython.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dags/airflowpython.py", line 10, in <module>
+    from main import main
+ModuleNotFoundError: No module named 'main'
+[2024-04-02T18:41:30.748+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:41:30.780+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dags/airflowpython.py took 0.079 seconds
+[2024-04-02T18:42:01.386+0000] {processor.py:161} INFO - Started process (PID=331) to work on /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:42:01.388+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dags/airflowpython.py for tasks to queue
+[2024-04-02T18:42:01.410+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:42:01.410+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:42:01.486+0000] {logging_mixin.py:188} INFO - [2024-04-02T18:42:01.478+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/dags/airflowpython.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dags/airflowpython.py", line 10, in <module>
+    from main import main
+ModuleNotFoundError: No module named 'main'
+[2024-04-02T18:42:01.488+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dags/airflowpython.py
+[2024-04-02T18:42:01.585+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dags/airflowpython.py took 0.211 seconds

@@ -1,0 +1,16 @@
+[2024-04-03T03:16:01.110+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.create_table manual__2024-04-03T03:15:52.215029+00:00 [queued]>
+[2024-04-03T03:16:01.136+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.create_table manual__2024-04-03T03:15:52.215029+00:00 [queued]>
+[2024-04-03T03:16:01.137+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T03:16:01.170+0000] {taskinstance.py:2217} INFO - Executing <Task(BigQueryCreateEmptyTableOperator): create_table> on 2024-04-03 03:15:52.215029+00:00
+[2024-04-03T03:16:01.189+0000] {standard_task_runner.py:60} INFO - Started process 5472 to run task
+[2024-04-03T03:16:01.195+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'create_table', 'manual__2024-04-03T03:15:52.215029+00:00', '--job-id', '71', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmp1v2v97b6']
+[2024-04-03T03:16:01.197+0000] {standard_task_runner.py:88} INFO - Job 71: Subtask create_table
+[2024-04-03T03:16:01.283+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.create_table manual__2024-04-03T03:15:52.215029+00:00 [running]> on host 84784c125ee0
+[2024-04-03T03:16:01.406+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='create_table' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T03:15:52.215029+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-03T03:15:52.215029+00:00'
+[2024-04-03T03:16:01.422+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T03:16:01.428+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T03:16:01.429+0000] {bigquery.py:1516} INFO - Creating table
+[2024-04-03T03:16:02.593+0000] {bigquery.py:1538} INFO - Table papyrus-technical-test.datalake_anyeli.transportistas created successfully
+[2024-04-03T03:16:02.657+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=google_sheet_to_bigquery, task_id=create_table, execution_date=20240403T031552, start_date=20240403T031601, end_date=20240403T031602
+[2024-04-03T03:16:02.712+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-03T03:16:02.824+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

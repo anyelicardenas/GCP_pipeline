@@ -1,0 +1,18 @@
+[2024-04-03T02:49:06.734+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.create_dataset scheduled__2024-04-03T01:00:00+00:00 [queued]>
+[2024-04-03T02:49:06.753+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.create_dataset scheduled__2024-04-03T01:00:00+00:00 [queued]>
+[2024-04-03T02:49:06.754+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T02:49:06.784+0000] {taskinstance.py:2217} INFO - Executing <Task(BigQueryCreateEmptyDatasetOperator): create_dataset> on 2024-04-03 01:00:00+00:00
+[2024-04-03T02:49:06.812+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'create_dataset', 'scheduled__2024-04-03T01:00:00+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpssgjdu1m']
+[2024-04-03T02:49:06.802+0000] {standard_task_runner.py:60} INFO - Started process 4985 to run task
+[2024-04-03T02:49:06.821+0000] {standard_task_runner.py:88} INFO - Job 32: Subtask create_dataset
+[2024-04-03T02:49:06.940+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.create_dataset scheduled__2024-04-03T01:00:00+00:00 [running]> on host 84784c125ee0
+[2024-04-03T02:49:07.146+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='create_dataset' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-03T01:00:00+00:00'
+[2024-04-03T02:49:07.168+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T02:49:07.175+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T02:49:07.176+0000] {bigquery.py:470} INFO - datasetId was not specified in `dataset_reference`. Will use default value datalake_anyeli.
+[2024-04-03T02:49:07.178+0000] {bigquery.py:470} INFO - projectId was not specified in `dataset_reference`. Will use default value habipruebatecnica.
+[2024-04-03T02:49:07.179+0000] {bigquery.py:481} INFO - Creating dataset: datalake_anyeli in project: habipruebatecnica 
+[2024-04-03T02:49:08.346+0000] {bigquery.py:485} INFO - Dataset created successfully.
+[2024-04-03T02:49:08.379+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=google_sheet_to_bigquery, task_id=create_dataset, execution_date=20240403T010000, start_date=20240403T024906, end_date=20240403T024908
+[2024-04-03T02:49:08.443+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-03T02:49:08.486+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

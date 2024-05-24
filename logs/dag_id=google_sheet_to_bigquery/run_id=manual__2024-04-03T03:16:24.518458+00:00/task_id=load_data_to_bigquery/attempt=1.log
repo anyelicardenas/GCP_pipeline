@@ -1,0 +1,38 @@
+[2024-04-03T03:16:46.210+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.load_data_to_bigquery manual__2024-04-03T03:16:24.518458+00:00 [queued]>
+[2024-04-03T03:16:46.227+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.load_data_to_bigquery manual__2024-04-03T03:16:24.518458+00:00 [queued]>
+[2024-04-03T03:16:46.228+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T03:16:46.272+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): load_data_to_bigquery> on 2024-04-03 03:16:24.518458+00:00
+[2024-04-03T03:16:46.290+0000] {standard_task_runner.py:60} INFO - Started process 5498 to run task
+[2024-04-03T03:16:46.294+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'load_data_to_bigquery', 'manual__2024-04-03T03:16:24.518458+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmpytr2tphb']
+[2024-04-03T03:16:46.297+0000] {standard_task_runner.py:88} INFO - Job 77: Subtask load_data_to_bigquery
+[2024-04-03T03:16:46.395+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.load_data_to_bigquery manual__2024-04-03T03:16:24.518458+00:00 [running]> on host 84784c125ee0
+[2024-04-03T03:16:46.575+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='load_data_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T03:16:24.518458+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-03T03:16:24.518458+00:00'
+[2024-04-03T03:16:46.611+0000] {logging_mixin.py:188} INFO -    idTransportista     nombreEmpresa
+0                1    Speedy Express
+1                2    United Package
+2                3  Federal Shipping
+3                4     test cargue 1
+[2024-04-03T03:16:46.614+0000] {logging_mixin.py:188} INFO - INSERT `papyrus-technical-test.datalake_anyeli.transportistas` VALUES (1, Speedy Express), (2, United Package), (3, Federal Shipping), (4, test cargue 1);
+[2024-04-03T03:16:46.627+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-03T03:16:46.635+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-04-03T03:16:46.712+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dags/habidag.py", line 49, in load_data_to_bigquery
+    insert_query_job.execute({'logical_date':datetime.now().isoformat()})
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2801, in execute
+    self.job_id = hook.generate_job_id(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2273, in generate_job_id
+    exec_date = logical_date.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+[2024-04-03T03:16:46.733+0000] {taskinstance.py:1149} INFO - Marking task as UP_FOR_RETRY. dag_id=google_sheet_to_bigquery, task_id=load_data_to_bigquery, execution_date=20240403T031624, start_date=20240403T031646, end_date=20240403T031646
+[2024-04-03T03:16:46.758+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 77 for task load_data_to_bigquery ('str' object has no attribute 'isoformat'; 5498)
+[2024-04-03T03:16:46.793+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-03T03:16:46.825+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

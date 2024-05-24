@@ -1,0 +1,45 @@
+[2024-04-03T02:49:24.353+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_data_from_google_sheet scheduled__2024-04-03T01:00:00+00:00 [queued]>
+[2024-04-03T02:49:24.371+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_sheet_to_bigquery.fetch_data_from_google_sheet scheduled__2024-04-03T01:00:00+00:00 [queued]>
+[2024-04-03T02:49:24.372+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-03T02:49:24.408+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): fetch_data_from_google_sheet> on 2024-04-03 01:00:00+00:00
+[2024-04-03T02:49:24.416+0000] {standard_task_runner.py:60} INFO - Started process 5006 to run task
+[2024-04-03T02:49:24.422+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'google_sheet_to_bigquery', 'fetch_data_from_google_sheet', 'scheduled__2024-04-03T01:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/dags/habidag.py', '--cfg-path', '/tmp/tmplj18r0sa']
+[2024-04-03T02:49:24.425+0000] {standard_task_runner.py:88} INFO - Job 37: Subtask fetch_data_from_google_sheet
+[2024-04-03T02:49:24.648+0000] {task_command.py:423} INFO - Running <TaskInstance: google_sheet_to_bigquery.fetch_data_from_google_sheet scheduled__2024-04-03T01:00:00+00:00 [running]> on host 84784c125ee0
+[2024-04-03T02:49:24.953+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_sheet_to_bigquery' AIRFLOW_CTX_TASK_ID='fetch_data_from_google_sheet' AIRFLOW_CTX_EXECUTION_DATE='2024-04-03T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-03T01:00:00+00:00'
+[2024-04-03T02:49:25.651+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/client.py", line 153, in open_by_key
+    spreadsheet = Spreadsheet(self.http_client, {"id": key})
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/spreadsheet.py", line 26, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/spreadsheet.py", line 210, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/http_client.py", line 303, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [403]: Google Sheets API has not been used in project 383243390510 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/sheets.googleapis.com/overview?project=383243390510 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dags/habidag.py", line 14, in fetch_data_from_google_sheet
+    spreadsheet = gc.open_by_url("https://docs.google.com/spreadsheets/d/1y7GQejKLerQgmkSFw0YBd7ih74kBGSIwaccMA5JgGqA/")
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/client.py", line 174, in open_by_url
+    return self.open_by_key(extract_id_from_url(url))
+  File "/home/airflow/.local/lib/python3.8/site-packages/gspread/client.py", line 158, in open_by_key
+    raise PermissionError from ex
+PermissionError
+[2024-04-03T02:49:25.685+0000] {taskinstance.py:1149} INFO - Marking task as UP_FOR_RETRY. dag_id=google_sheet_to_bigquery, task_id=fetch_data_from_google_sheet, execution_date=20240403T010000, start_date=20240403T024924, end_date=20240403T024925
+[2024-04-03T02:49:25.713+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 37 for task fetch_data_from_google_sheet (; 5006)
+[2024-04-03T02:49:25.751+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-03T02:49:25.859+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
